@@ -39,6 +39,9 @@ public class UserService {
 
     public List<Permission> getPermission(Long id){
         var user =  userRepository.findById(id);
-        return user.map(User::getPermissions).orElse(null);
+        if(user.isPresent() && user.get().getLocked().equals(false)){
+            return user.get().getPermissions();
+        }
+        return null;
     }
 }
