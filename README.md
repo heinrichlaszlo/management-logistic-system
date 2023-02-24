@@ -1,6 +1,6 @@
 # management-logistic-system
  
-You must first run management-logistic-system and then transport-data-management-system.
+You must first run https://github.com/heinrichlaszlo/management-logistic-system and then https://github.com/heinrichlaszlo/transport-data-management-system.
 
 You can see all users on the port: 
 
