@@ -50,4 +50,10 @@ public class UserController {
         userService.deleteUser(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @GetMapping("/login/{name}/{password}")
+    public ResponseEntity<User> login(@PathVariable("name") String name,@PathVariable("password") String password){
+        var user = userService.login(name,password);
+        return new ResponseEntity<User>(user, HttpStatus.OK);
+    }
 }
