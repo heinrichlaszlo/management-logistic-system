@@ -4,6 +4,7 @@ import com.managementlogisticsystem.managementlogisticsystem.user.permission.Per
 import jakarta.persistence.*;
 import lombok.*;
 
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -23,12 +24,16 @@ public class User implements Serializable {
     @Column(nullable = false, updatable = false)
     private Long id;
 
+    @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
     private String password;
+
 
     private LocalDateTime lastLoginTime;
 
+    @Column(nullable = false)
     private Boolean locked;
 
     @ElementCollection

@@ -23,6 +23,13 @@ public class UserService {
     }
 
     public User addUser(User user){
+        try{
+            if(user.getPermissions().isEmpty()){
+            user.setPermissions(List.of(Permission.NONE));
+        }
+        }catch(NullPointerException e){
+            throw new NullPointerException("Permissions cant be null");
+        }
         return userRepository.save(user);
     }
 
